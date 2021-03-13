@@ -22,6 +22,7 @@ class Ui(QtWidgets.QMainWindow):
         self.stack_7 = self.findChild(QtWidgets.QLabel, 'stack_7')
         self.bank = self.findChild(QtWidgets.QLabel, 'bank')
         self.bank_items = self.findChild(QtWidgets.QLabel, 'bank_items')
+        self.logo = self.findChild(QtWidgets.QLabel, 'logo')
         self.tabe.setStyleSheet("background-color: green; border: 1px solid green;")
         pixmap = QPixmap('./images/frame.png')
         self.dump_1.setPixmap(pixmap)
@@ -37,6 +38,8 @@ class Ui(QtWidgets.QMainWindow):
         self.stack_7.setPixmap(pixmap)
         self.bank.setPixmap(pixmap)
         self.bank_items.setPixmap(pixmap)
+        pixmap = QPixmap('./images/logo.png')
+        self.logo.setPixmap(pixmap)
         self.show()
 
 
