@@ -1,10 +1,10 @@
 # Klondike Solitaire by Kuznetsov V.R.
 import random
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, uic
 import PyQt5.QtGui
 
 
-class Card():
+class Card(QtWidgets.QLabel):
     """
     Card class that can hold its value and a suit.
 
@@ -20,13 +20,11 @@ class Card():
     suit_vals = {1: 'Heart', 2: 'Diamond', 3: 'Club', 4: 'Spade'}
 
     def __init__(self, val, suit):
+        super(Card, self).__init__()
         self.name = self.card_vals[val]
         self.suit = self.suit_vals[suit]
         self.full_n = f'{self.name} {self.suit}'
         self.val = val
-
-    def __str__(self):
-        return self.full_n
 
     def is_under(self, card):
         """
@@ -91,10 +89,6 @@ class Stack:
         for c in range(num_of_cards):
             self.cards.append(deck.pop_card())
 
-    def __str__(self):
-        result = f'Stack {self.name}:\nCards in this stack: {len(self.cards)}\nTop most card: {self.cards[-1]}\n'
-        return result
-
     def add_card(self, card):
         """
         Add a card to the list.
@@ -111,9 +105,12 @@ class Table:
         for s in range(num_of_stacks):
             self.stacks.append(Stack(self.deck, s+1))
 
+'''
 
 if __name__ == "__main__":
     t = Table()
     for st in t.stacks:
         print(st)
     print('Number of cards left: ', len(t.deck.deck))
+    
+'''
