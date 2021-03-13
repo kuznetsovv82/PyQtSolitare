@@ -14,47 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGraphicsView" name="dump_4">
-    <property name="geometry">
-     <rect>
-      <x>680</x>
-      <y>10</y>
-      <width>81</width>
-      <height>131</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="dump_3">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
-      <y>10</y>
-      <width>81</width>
-      <height>131</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="dump_2">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>10</y>
-      <width>81</width>
-      <height>131</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="dump_1">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>10</y>
-      <width>81</width>
-      <height>131</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="bank">
+   <widget class="QLabel" name="bank">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -63,48 +23,50 @@
       <height>131</height>
      </rect>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
-   <widget class="QGraphicsView" name="stack_7">
+   <widget class="QLabel" name="bank_items">
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>130</x>
+      <y>10</y>
+      <width>81</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="stack_1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
       <y>190</y>
       <width>81</width>
       <height>131</height>
      </rect>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
-   <widget class="QGraphicsView" name="stack_6">
+   <widget class="QLabel" name="stack_2">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>130</x>
       <y>190</y>
       <width>81</width>
       <height>131</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QGraphicsView" name="stack_5">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>190</y>
-      <width>81</width>
-      <height>131</height>
-     </rect>
+    <property name="text">
+     <string/>
     </property>
    </widget>
-   <widget class="QGraphicsView" name="stack_4">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>190</y>
-      <width>81</width>
-      <height>131</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="stack_3">
+   <widget class="QLabel" name="stack_3">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -113,28 +75,115 @@
       <height>131</height>
      </rect>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
-   <widget class="QGraphicsView" name="stack_2">
+   <widget class="QLabel" name="stack_4">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>350</x>
       <y>190</y>
       <width>81</width>
       <height>131</height>
      </rect>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
-   <widget class="QGraphicsView" name="stack_1">
+   <widget class="QLabel" name="stack_5">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>460</x>
       <y>190</y>
       <width>81</width>
       <height>131</height>
      </rect>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
-   <widget class="QGraphicsView" name="logo">
+   <widget class="QLabel" name="stack_6">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>190</y>
+      <width>81</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="stack_7">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>190</y>
+      <width>81</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dump_1">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>10</y>
+      <width>81</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dump_2">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>10</y>
+      <width>81</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dump_3">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>10</y>
+      <width>81</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dump_4">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>10</y>
+      <width>81</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="logo">
     <property name="geometry">
      <rect>
       <x>150</x>
@@ -143,42 +192,38 @@
       <height>131</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QGraphicsView" name="bank_options">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>10</y>
-      <width>81</width>
-      <height>131</height>
-     </rect>
+    <property name="text">
+     <string/>
     </property>
    </widget>
-   <widget class="QGraphicsView" name="table">
+   <widget class="QLabel" name="table">
     <property name="geometry">
      <rect>
-      <x>-5</x>
-      <y>-9</y>
+      <x>-4</x>
+      <y>2</y>
       <width>791</width>
-      <height>571</height>
+      <height>561</height>
      </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
    <zorder>table</zorder>
+   <zorder>stack_4</zorder>
    <zorder>dump_4</zorder>
+   <zorder>stack_6</zorder>
+   <zorder>stack_7</zorder>
+   <zorder>logo</zorder>
+   <zorder>stack_5</zorder>
+   <zorder>stack_1</zorder>
+   <zorder>stack_3</zorder>
+   <zorder>stack_2</zorder>
    <zorder>dump_3</zorder>
    <zorder>dump_2</zorder>
    <zorder>dump_1</zorder>
+   <zorder>bank_items</zorder>
    <zorder>bank</zorder>
-   <zorder>stack_7</zorder>
-   <zorder>stack_6</zorder>
-   <zorder>stack_5</zorder>
-   <zorder>stack_4</zorder>
-   <zorder>stack_3</zorder>
-   <zorder>stack_2</zorder>
-   <zorder>stack_1</zorder>
-   <zorder>logo</zorder>
-   <zorder>bank_options</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

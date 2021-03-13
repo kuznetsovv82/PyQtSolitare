@@ -1,8 +1,10 @@
 # Klondike Solitaire by Kuznetsov V.R.
 import random
+from PyQt5 import QtWidgets
+import PyQt5.QtGui
 
 
-class Card:
+class Card():
     """
     Card class that can hold its value and a suit.
 
