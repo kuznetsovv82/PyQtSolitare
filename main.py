@@ -8,7 +8,7 @@ class Ui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui, self).__init__()
         uic.loadUi('klondike.ui', self)
-        self.tabe = self.findChild(QtWidgets.QLabel, 'table')
+        self.table = self.findChild(QtWidgets.QLabel, 'table')
         self.dump_1 = self.findChild(QtWidgets.QLabel, 'dump_1')
         self.dump_2 = self.findChild(QtWidgets.QLabel, 'dump_2')
         self.dump_3 = self.findChild(QtWidgets.QLabel, 'dump_3')
@@ -23,7 +23,7 @@ class Ui(QtWidgets.QMainWindow):
         self.bank = self.findChild(QtWidgets.QLabel, 'bank')
         self.bank_items = self.findChild(QtWidgets.QLabel, 'bank_items')
         self.logo = self.findChild(QtWidgets.QLabel, 'logo')
-        self.tabe.setStyleSheet("background-color: green; border: 1px solid green;")
+        self.table.setStyleSheet("background-color: green; border: 1px solid green;")
         pixmap = QPixmap('./images/frame.png')
         self.dump_1.setPixmap(pixmap)
         self.dump_2.setPixmap(pixmap)
