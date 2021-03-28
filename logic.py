@@ -1,11 +1,13 @@
 # Klondike Solitaire by Kuznetsov V.R.
 import random
-from PyQt5 import QtCore
+from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QLabel
 
 
 class Card(QLabel):
+    bank_signal = pyqtSignal()
+
     def __init__(self, val, suit, parent):
         QLabel.__init__(self, parent)
         card_vals = {1: 'A', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9', 10: '10', 11: 'J', 12: 'Q',
@@ -13,18 +15,31 @@ class Card(QLabel):
 
         suit_vals = {1: 'H', 2: 'D', 3: 'C', 4: 'S'}
 
+        self.fsm = {
+            1: "bank",
+            2: "stack",
+            3: "dump",
+            4: "display"
+        }
         self.active = False
         self.name = card_vals[val]
         self.suit = suit_vals[suit]
         self.full_n = f'{val}{self.suit}'
         self.val = val
+        self.state = self.fsm[2]
         self.update_image()
 
+    def set_state(self, state):
+        self.state = self.fsm[state]
+
     def mousePressEvent(self, event):
+        if self.state == "bank":
+            self.bank_signal.emit()
+
         if self.active:
-            print(f'Clicked {self.full_n}')
+            print(f'Clicked {self.full_n}, current state: {self.state}')
         else:
-            print('The card is hidden!')
+            print(f'The card is hidden!, current state: {self.state}')
 
     def update_image(self):
         if self.active:
