@@ -8,33 +8,35 @@ import random
 
 class Table(QWidget):
     def __init__(self):
-        super().__init__()
+        super(Table, self).__init__()
 
         self.setWindowTitle("My Ebaniy app")
+        layout = QHBoxLayout()
 
-        v_default = 200
         v_offset = 10
         h_offset = 100
-        curr_offset_v = v_default
+        curr_offset_v = 10
         curr_offset_h = 10
 
-        self.deck = [Card(val, suit, self) for val in range(1, 14) for suit in range(1, 5)]
+        self.deck = [Card(val, suit) for val in range(1, 14) for suit in range(1, 5)]
         random.shuffle(self.deck)
 
         self.stacks = [[], [], [], [], [], [], []]
 
         for stack in range(len(self.stacks)):
             for c in range(stack+1):
-                card = self.deck.pop()
-                card.move(curr_offset_h, curr_offset_v)
-                card.raise_()
-                self.stacks[stack].append(card)
-                curr_offset_v += v_offset
+                self.stacks[stack].append(self.deck.pop())
             self.stacks[stack][-1].isActive(True)
-            curr_offset_h += h_offset
-            curr_offset_v = v_default
 
-        self.setGeometry(0, 0, 700, 500)
+        for stack in self.stacks:
+            for card in stack:
+                card.move(curr_offset_h, curr_offset_v)
+                layout.addWidget(card)
+                curr_offset_v += v_offset
+                curr_offset_h += h_offset
+
+        self.setLayout(layout)
+        self.setGeometry(300, 300, 250, 150)
 
 
 app = QApplication(sys.argv)
