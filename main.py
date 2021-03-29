@@ -53,7 +53,7 @@ class Table(QWidget):
 
         self.display = []
 
-        self.setGeometry(-900, 250, 700, 500)
+        self.setFixedSize(700, 500)
         self.setWindowTitle("Solitaire by Kuznetsov V.R.")
 
     def get_bank(self):

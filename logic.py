@@ -1,7 +1,7 @@
 # Klondike Solitaire by Kuznetsov V.R.
 import random
-from PyQt5.QtCore import pyqtSignal
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import pyqtSignal, Qt, QMimeData
+from PyQt5.QtGui import QPixmap, QDrag, QCursor, QMouseEvent
 from PyQt5.QtWidgets import QLabel
 
 
