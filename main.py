@@ -15,10 +15,9 @@ class Table(QWidget):
         self.h_offset = 100
         self.curr_offset_v = self.v_default
         self.curr_offset_h = 10
-        self.bank_pos_x = 10
-        self.bank_pos_y = 10
-        self.display_start = self.bank_pos_x + self.h_offset
+        self.display_start = self.v_offset + self.h_offset
         self.display_curr = self.display_start
+        self.dump_start = 310
 
         self.deck = [Card(val, suit, self) for val in range(1, 14) for suit in range(1, 5)]
         for card in self.deck:
@@ -26,6 +25,14 @@ class Table(QWidget):
         random.shuffle(self.deck)
 
         self.stacks = [[], [], [], [], [], [], []]
+
+        dumps = []
+        for i in range(4):
+            dumps.append(QLabel(self))
+            pixmap = QPixmap('./images/frame.png')
+            dumps[i].setPixmap(pixmap)
+            dumps[i].move(self.dump_start, self.v_offset)
+            self.dump_start += self.h_offset
 
         for stack in range(len(self.stacks)):
             for c in range(stack+1):
@@ -40,13 +47,13 @@ class Table(QWidget):
             self.curr_offset_v = self.v_default
 
         for card in self.deck:
-            card.move(self.bank_pos_x, self.bank_pos_y)
+            card.move(self.v_offset, self.v_offset)
             card.raise_()
             card.set_state(1)
 
         self.display = []
 
-        self.setGeometry(3000, 250, 700, 500)
+        self.setGeometry(-900, 250, 700, 500)
         self.setWindowTitle("Solitaire by Kuznetsov V.R.")
 
     def get_bank(self):
@@ -55,13 +62,13 @@ class Table(QWidget):
             if len(self.display) >= 3:
                 cdisp = self.display.pop()
                 cdisp.isActive(False)
-                cdisp.move(self.bank_pos_x, self.bank_pos_y)
+                cdisp.move(self.v_offset, self.v_offset)
                 cdisp.set_state(1)
                 self.deck.insert(0, cdisp)
             card = self.deck.pop()
             card.set_state(4)
             card.isActive(True)
-            card.move(self.display_curr, self.bank_pos_y)
+            card.move(self.display_curr, self.v_offset)
             card.raise_()
             self.display_curr += self.v_offset*2
             self.display.insert(0, card)
